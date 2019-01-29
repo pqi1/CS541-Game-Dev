@@ -1,5 +1,6 @@
 package com.example.helloworldproj;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,11 +27,20 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView outputText = findViewById(R.id.outputText);
 
+        final ImageView pigL = findViewById(R.id.pigL);
+        final ImageView pigR = findViewById(R.id.pigR);
+
         final Button changeButton = findViewById(R.id.changeButton);
         changeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 outputText.setText(inputText.getText());
+
+                Drawable a = pigL.getDrawable();
+                Drawable b = pigR.getDrawable();
+
+                pigL.setImageDrawable(b);
+                pigR.setImageDrawable(a);
             }
         });
 
